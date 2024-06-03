@@ -9,17 +9,28 @@ package logica;
  * @author andresuv
  */
 public class Cliente {
-    private int cliente_id;
+    private String cliente_id;
     private String telefono;
     private String email;
     private String direccion;
     private String nombre;
 
-    public int getCliente_id() {
+    public String getCliente_id() {
         return cliente_id;
     }
 
-    public void setCliente_id(int cliente_id) {
+    public Cliente() {
+    }
+
+    public Cliente(String cliente_id, String telefono, String email, String direccion, String nombre) {
+        this.cliente_id = cliente_id;
+        this.telefono = telefono;
+        this.email = email;
+        this.direccion = direccion;
+        this.nombre = nombre;
+    }
+
+    public void setCliente_id(String cliente_id) {
         this.cliente_id = cliente_id;
     }
 

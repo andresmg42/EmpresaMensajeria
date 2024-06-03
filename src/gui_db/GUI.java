@@ -68,7 +68,6 @@ public class GUI extends javax.swing.JFrame {
         /**ImageIcon icon = new ImageIcon("X Icon.jpg");
         JBExit.setIcon(icon);**/
         JBExit.setBorderPainted(true);
-        JBExit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\X Icono.jpg")); // NOI18N
         JBExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBExitActionPerformed(evt);

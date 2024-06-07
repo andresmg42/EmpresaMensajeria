@@ -9,14 +9,16 @@ public class GUI_DB {
     /**
      * @param args the command line arguments
      */
+    public static GUI Bienvenido; 
+    
     public static void main(String[] args) {
-        GUI x  = new GUI();
-        x.setVisible(true);
-        PCliente c = new PCliente();
-        PMensajero m = new PMensajero();
-        PGerente g = new PGerente();
-        c.setVisible(true);
-        m.setVisible(true);
-        g.setVisible(true);
+        Bienvenido= new GUI();
+        Bienvenido.setVisible(true);
+        //PCliente c = new PCliente();
+        //PMensajero m = new PMensajero();
+        //PGerente g = new PGerente();
+        //c.setVisible(true);
+        //m.setVisible(true);
+        //g.setVisible(true);
     }   
 }

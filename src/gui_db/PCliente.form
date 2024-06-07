@@ -24,13 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="BSolicitar" max="32767" attributes="0"/>
-                  <Component id="LInicio" pref="183" max="32767" attributes="0"/>
-                  <Component id="BPedidos" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="LInicio" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="BPedidos" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                  <Component id="BSolicitar" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,7 +57,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Black" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Inicio como: Cliente"/>
+        <Property name="text" type="java.lang.String" value="Inicio como: Usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">

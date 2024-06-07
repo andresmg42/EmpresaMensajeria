@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gui_db;
+import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author Jose Daniel
@@ -131,29 +133,38 @@ public class PSeccion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    PCliente pcliente = new PCliente();
-    PMensajero pmensajero = new PMensajero();
-    PGerente pgerente = new PGerente();
-    GUI miGui = new GUI();
-    String codigo_obtenido = miGui.getCode();
+
+    
+    
+  
+    
     private void JRetrocesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRetrocesoActionPerformed
-        // TODO add your handling code here:
+        GUI_DB.Bienvenido.setVisible(true);
+        dispose();
     }//GEN-LAST:event_JRetrocesoActionPerformed
 
     private void BIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIniciarActionPerformed
-
-        System.out.println(codigo_obtenido);
-        /**switch (code_inicio) {
-            case "Cliente" :  pcliente.setVisible(true);
-            
-            case "Mensajero" : pmensajero.setVisible(true);
-            
-            case "Gerente" : pgerente.setVisible(true);
+        String code_inicio = GUI.code;
+        System.out.println(code_inicio);   
                 
-                break;
-            default:
-                throw new AssertionError();
-        }**/
+        if (code_inicio.equals("Cliente")) {
+            PCliente pcliente = new PCliente(); 
+            pcliente.setVisible(true);
+           
+            }
+        
+        else if (code_inicio.equals("Mensajero")) {
+        PMensajero pmensajero = new PMensajero(); 
+        pmensajero.setResizable(false);
+        pmensajero.setVisible(true);
+        }
+        
+        else if (code_inicio.equals("Gerente")){
+        PGerente pgerente = new PGerente();
+        pgerente.setVisible(true);
+        }
+        
+        GUI.seccion.setVisible(false);       
     }//GEN-LAST:event_BIniciarActionPerformed
 
     private void TBShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBShowActionPerformed

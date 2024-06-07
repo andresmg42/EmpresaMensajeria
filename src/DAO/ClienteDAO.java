@@ -107,7 +107,7 @@ public class ClienteDAO {
         String sql_borrar;
         int numFilas = 0;
 
-        sql_borrar = "DELETE FROM programa WHERE cliente_id = '" + id + "'";
+        sql_borrar = "DELETE FROM cliente WHERE cliente_id = '" + id + "'";
         try {
 
             Statement sentencia = this.conn.createStatement();

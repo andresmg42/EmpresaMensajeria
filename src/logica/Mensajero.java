@@ -8,18 +8,18 @@ package logica;
  *
  * @author andresuv
  */
-public class mensajero {
-    private int id_mensajero;
+public class Mensajero {
+    private String id_mensajero;
     private String nombre;
     private String direccion;
     private String email;
     private String telefono;
 
-    public int getId_mensajero() {
+    public String getId_mensajero() {
         return id_mensajero;
     }
 
-    public void setId_mensajero(int id_mensajero) {
+    public void setId_mensajero(String id_mensajero) {
         this.id_mensajero = id_mensajero;
     }
 

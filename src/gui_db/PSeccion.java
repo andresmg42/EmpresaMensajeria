@@ -5,12 +5,13 @@
 package gui_db;
 import javax.swing.*;
 import java.awt.*;
+import controlador.*;
 /**
  *
  * @author Jose Daniel
  */
 public class PSeccion extends javax.swing.JFrame {
-
+ControladorUsuario cont=new ControladorUsuario();
     /**
      * Creates new form PSecion
      */
@@ -19,6 +20,7 @@ public class PSeccion extends javax.swing.JFrame {
     
     public PSeccion() {
         initComponents();
+        
     }
 
     /**
@@ -37,7 +39,7 @@ public class PSeccion extends javax.swing.JFrame {
         LLogin = new javax.swing.JLabel();
         TFLogin = new javax.swing.JTextField();
         LPassword = new javax.swing.JLabel();
-        jPasswordField = new javax.swing.JPasswordField();
+        TFcontraseña = new javax.swing.JPasswordField();
         BIniciar = new javax.swing.JButton();
         TBShow = new javax.swing.JToggleButton();
 
@@ -48,7 +50,6 @@ public class PSeccion extends javax.swing.JFrame {
         Titulo.setText("BIENVENIDO");
 
         JRetroceso.setBorderPainted(true);
-        JRetroceso.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\newRetroceso(redimencionado).png")); // NOI18N
         JRetroceso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JRetrocesoActionPerformed(evt);
@@ -63,7 +64,12 @@ public class PSeccion extends javax.swing.JFrame {
 
         LPassword.setText("Password:");
 
-        jPasswordField.setText("jPasswordField1");
+        TFcontraseña.setText("jPasswordField1");
+        TFcontraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFcontraseñaActionPerformed(evt);
+            }
+        });
 
         BIniciar.setText("Iniciar Seccion");
         BIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +78,6 @@ public class PSeccion extends javax.swing.JFrame {
             }
         });
 
-        TBShow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\Ojocerrado.png")); // NOI18N
         TBShow.setBorderPainted(true);
         TBShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +102,7 @@ public class PSeccion extends javax.swing.JFrame {
                     .addComponent(BIniciar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jPasswordField)
+                            .addComponent(TFcontraseña)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(TBShow, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(TFLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -124,7 +129,7 @@ public class PSeccion extends javax.swing.JFrame {
                 .addComponent(LPassword)
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TFcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TBShow, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
@@ -144,16 +149,15 @@ public class PSeccion extends javax.swing.JFrame {
     }//GEN-LAST:event_JRetrocesoActionPerformed
 
     private void BIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIniciarActionPerformed
-        String code_inicio = GUI.code;
-        System.out.println(code_inicio);   
+          
                 
-        if (code_inicio.equals("Cliente")) {
+        if (cont.validarGerente(TFLogin.getText(),new String(TFcontraseña.getPassword()))) {
             PCliente pcliente = new PCliente(); 
             pcliente.setVisible(true);
            
             }
         
-        else if (code_inicio.equals("Mensajero")) {
+        else if (cont.) {
         PMensajero pmensajero = new PMensajero(); 
         pmensajero.setResizable(false);
         pmensajero.setVisible(true);
@@ -169,14 +173,18 @@ public class PSeccion extends javax.swing.JFrame {
 
     private void TBShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBShowActionPerformed
         if (TBShow.isSelected()==true){
-            jPasswordField.setEchoChar((char)0);
+            TFcontraseña.setEchoChar((char)0);
             TBShow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\Ojoabierto.png"));
             
         }else{
-            jPasswordField.setEchoChar('*');
+            TFcontraseña.setEchoChar('*');
             TBShow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\Ojocerrado.png"));
         }
     }//GEN-LAST:event_TBShowActionPerformed
+
+    private void TFcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFcontraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFcontraseñaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,8 +198,8 @@ public class PSeccion extends javax.swing.JFrame {
     private javax.swing.JLabel LPassword;
     private javax.swing.JToggleButton TBShow;
     private javax.swing.JTextField TFLogin;
+    private javax.swing.JPasswordField TFcontraseña;
     private javax.swing.JLabel Titulo;
-    private javax.swing.JPasswordField jPasswordField;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

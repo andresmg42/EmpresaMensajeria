@@ -163,6 +163,10 @@ public class PSeccion extends javax.swing.JFrame {
         PGerente pgerente = new PGerente();
         pgerente.setVisible(true);
         }
+ 
+ 
+        
+    
         
         GUI.seccion.setVisible(false);       
     }//GEN-LAST:event_BIniciarActionPerformed

@@ -235,8 +235,6 @@ public class GestionMensajero extends javax.swing.JFrame {
         am.setVisible(true);
     }//GEN-LAST:event_BtnActualizarActionPerformed
 
-
-
     public JTextField getTFconsultar() {
         return TFconsultar;
     }

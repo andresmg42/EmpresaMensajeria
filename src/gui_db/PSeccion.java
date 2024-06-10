@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gui_db;
+
 import javax.swing.*;
 import java.awt.*;
+
 /**
  *
  * @author Jose Daniel
@@ -14,12 +16,12 @@ public class PSeccion extends javax.swing.JFrame {
     /**
      * Creates new form PSecion
      */
-    
-    
-    
+    static PUsuario pcliente;
+
     public PSeccion() {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -134,10 +136,7 @@ public class PSeccion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-  
-    
+
     private void JRetrocesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRetrocesoActionPerformed
         GUI_DB.Bienvenido.setVisible(true);
         dispose();
@@ -145,38 +144,34 @@ public class PSeccion extends javax.swing.JFrame {
 
     private void BIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIniciarActionPerformed
         String code_inicio = GUI.code;
-        System.out.println(code_inicio);   
-                
+        System.out.println(code_inicio);
+
         if (code_inicio.equals("Cliente")) {
-            PCliente pcliente = new PCliente(); 
+            pcliente = new PUsuario();
             pcliente.setVisible(true);
-           
-            }
-        
-        else if (code_inicio.equals("Mensajero")) {
-        PMensajero pmensajero = new PMensajero(); 
-        pmensajero.setResizable(false);
-        pmensajero.setVisible(true);
+            this.setVisible(false);
+        } else if (code_inicio.equals("Mensajero")) {
+            PMensajero pmensajero = new PMensajero();
+            pmensajero.setResizable(false);
+            pmensajero.setVisible(true);
+            this.setVisible(false);
+
+        } else if (code_inicio.equals("Gerente")) {
+            PGerente pgerente = new PGerente();
+            pgerente.setVisible(true);
+            this.setVisible(false);
+
         }
-        
-        else if (code_inicio.equals("Gerente")){
-        PGerente pgerente = new PGerente();
-        pgerente.setVisible(true);
-        }
- 
- 
-        
-    
-        
-        GUI.seccion.setVisible(false);       
+
+
     }//GEN-LAST:event_BIniciarActionPerformed
 
     private void TBShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBShowActionPerformed
-        if (TBShow.isSelected()==true){
-            jPasswordField.setEchoChar((char)0);
+        if (TBShow.isSelected() == true) {
+            jPasswordField.setEchoChar((char) 0);
             TBShow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\Ojoabierto.png"));
-            
-        }else{
+
+        } else {
             jPasswordField.setEchoChar('*');
             TBShow.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jose Daniel\\Desktop\\Universidad\\Programacion\\Bases de datos\\Proyecto\\Imagenes\\Ojocerrado.png"));
         }
@@ -185,7 +180,7 @@ public class PSeccion extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BIniciar;
     private javax.swing.JButton JRetroceso;

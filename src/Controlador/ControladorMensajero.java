@@ -5,6 +5,7 @@
     package Controlador;
 
     import DAO.MensajeroDAO;
+import java.util.ArrayList;
     import logica.Cliente;
     import logica.Mensajero;
 
@@ -22,7 +23,6 @@
 
         public int insertarMensajero(String id, String telefono, String email, String direccion, String nombre) {
             Mensajero m = new Mensajero();
-
             m.setId_mensajero(id);
             m.setTelefono(telefono);
             m.setEmail(email);
@@ -42,7 +42,11 @@
             String m = mensajeroDao.listarMensajeros();
             return m;
         }
-
+        public ArrayList<String[]> ListarComoVector(){
+            ArrayList<String[]> a = mensajeroDao.listarComoVector();
+            return a;
+            
+        }
         public void ActualizarMensajero(String id, String DatoAActualizar, String dato) {
             mensajeroDao.actualizarMensajero(id, DatoAActualizar, dato);
         }

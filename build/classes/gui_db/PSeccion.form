@@ -94,11 +94,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="JRetroceso">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Jose Daniel\Desktop\Universidad\Programacion\Bases de datos\Proyecto\Imagenes\newRetroceso(redimencionado).png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRetrocesoActionPerformed"/>
       </Events>
@@ -144,11 +139,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="TBShow">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Jose Daniel\Desktop\Universidad\Programacion\Bases de datos\Proyecto\Imagenes\Ojocerrado.png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TBShowActionPerformed"/>
       </Events>

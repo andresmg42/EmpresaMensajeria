@@ -46,17 +46,18 @@ public class MensajeroDAO {
         }
         return -1;
     }//fin guardar
+
     public String consultarMensajero(String id) {
         String sql_select;
-        String a ="";
-        sql_select = "SELECT * FROM mensajero WHERE mensajero_id    ='"+id+"'";
+        String a = "";
+        sql_select = "SELECT * FROM mensajero WHERE mensajero_id    ='" + id + "'";
         try {
             Connection conn = fachada.openConnection();
             Statement sentencia = conn.createStatement();
             ResultSet tabla = sentencia.executeQuery(sql_select);
             while (tabla.next()) {
-                 a += ("ID: " + tabla.getString(1) + " Telefono: " + tabla.getString(2)
-                        + " Email: " + tabla.getString(3) + " Direccion: " + tabla.getString(4) + " Nombre: " + tabla.getString(5)+" \n");
+                a += ("ID: " + tabla.getString(1) + " Telefono: " + tabla.getString(2)
+                        + " Email: " + tabla.getString(3) + " Direccion: " + tabla.getString(4) + " Nombre: " + tabla.getString(5) + " \n");
 
             }
             conn.close();
@@ -70,17 +71,18 @@ public class MensajeroDAO {
         return null;
 
     }
+
     public String listarMensajeros() {
         String sql_select;
-        String a ="";
+        String a = "";
         sql_select = "SELECT * FROM mensajero";
         try {
             Connection conn = fachada.openConnection();
             Statement sentencia = conn.createStatement();
             ResultSet tabla = sentencia.executeQuery(sql_select);
             while (tabla.next()) {
-                 a += ("ID: " + tabla.getString(1) + " Telefono: " + tabla.getString(2)
-                        + " Email: " + tabla.getString(3) + " Direccion: " + tabla.getString(4) + " Nombre: " + tabla.getString(5)+" \n");
+                a += ("ID: " + tabla.getString(1) + " Telefono: " + tabla.getString(2)
+                        + " Email: " + tabla.getString(3) + " Direccion: " + tabla.getString(4) + " Nombre: " + tabla.getString(5) + " \n");
 
             }
             conn.close();
@@ -94,7 +96,38 @@ public class MensajeroDAO {
         return null;
 
     }
-    //UPDATE mi_tabla SET ciudad = 'Valencia' WHERE nombre = 'Pepito' AND ciudad = 'Sevilla';
+
+    public ArrayList<String[]> listarComoVector() {
+        String sql_select;
+
+        ArrayList<String[]> b = new ArrayList<>();
+        sql_select = "SELECT * FROM mensajero";
+        try {
+            Connection conn = fachada.openConnection();
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);
+            while (tabla.next()) {
+                        String[] a = new String[5];
+
+                a[0] =  tabla.getString(1);
+                a[1] =  tabla.getString(2);
+                a[2] =  tabla.getString(3);
+                a[3] =  tabla.getString(4);
+                a[4] =  tabla.getString(5);
+
+                b.add(a);
+            }
+            conn.close();
+
+            return b;
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+
+    }
 
     public int actualizarMensajero(String id, String datoAActualizar, String dato) {
         String sqlActualizar;

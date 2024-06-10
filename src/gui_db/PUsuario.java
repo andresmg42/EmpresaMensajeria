@@ -8,13 +8,13 @@ package gui_db;
  *
  * @author Jose Daniel
  */
-public class PCliente extends javax.swing.JFrame {
+public class PUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PCliente
-     */
-    public PCliente() {
+    public static SolicitarServicio ss;
+
+    public PUsuario() {
         initComponents();
+        ss = new SolicitarServicio();
     }
 
     /**
@@ -41,6 +41,11 @@ public class PCliente extends javax.swing.JFrame {
         BPedidos.setText("Mis Pedidos");
 
         BSolicitar.setText("Solicitar servicio");
+        BSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BSolicitarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,6 +76,11 @@ public class PCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSolicitarActionPerformed
+        this.setVisible(false);
+        ss.setVisible(true);
+    }//GEN-LAST:event_BSolicitarActionPerformed
 
     /**
      * @param args the command line arguments
